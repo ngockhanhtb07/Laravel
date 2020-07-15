@@ -104,14 +104,14 @@ class ProductController extends Controller
             . '<br/>Image: ' . $product->imgFull;
     }
 
-    public function searchByName(Request $request)
+    public function searchName(Request $request)
     {
         $products = Product::where('name', 'like', '%' . $request->value . '%')->get();
 
         return response()->json($products);
     }
 
-    public function searchById(Request $request)
+    public function searchId(Request $request)
     {
         $products = Product::where('id', 'like', '%' . $request->value . '%')->get();
 
